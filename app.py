@@ -1,10 +1,13 @@
-from flask import Flask , render_template
+from flask import Flask , render_template, request
 
 app = Flask(__name__)
 
-@app.route("/")
+projectslist = ["Portfolio", "Todo App", "Blog"]
+
+@app.route("/" , methods=["GET","POST"])
 def home():
-    return render_template("index.html")
+    username = request.form.get("username")
+    return render_template("home.html" , name = username ,age= 2 ,language= "pyhton")
 
 @app.route("/about")
 def about():
@@ -12,7 +15,7 @@ def about():
 
 @app.route("/projects")
 def projects ():
-    return render_template("projects.html")
+    return render_template("projects.html", projects = projectslist)
 
 @app.route("/contact")
 def contact():
