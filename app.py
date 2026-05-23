@@ -1,13 +1,18 @@
-from flask import Flask , render_template, request
+from flask import Flask , render_template, request , url_for
 
 app = Flask(__name__)
 
-projectslist = ["Portfolio", "Todo App", "Blog"]
+projectslist = ["Portfolio", "Todo App", "Blog"] 
 
 @app.route("/" , methods=["GET","POST"])
 def home():
-    username = request.form.get("username")
-    return render_template("home.html" , name = username ,age= 2 ,language= "pyhton")
+    if request.method == "GET":
+        username = "Guest"
+        userage = None
+    elif request.method == "POST":    
+        username = request.form.get("username")
+        userage = int(request.form.get("userage"))
+    return render_template("home.html" , name = username ,age=userage ,language= "pyhton")
 
 @app.route("/about")
 def about():
