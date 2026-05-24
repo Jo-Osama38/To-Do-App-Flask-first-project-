@@ -2,21 +2,13 @@
 {% block content %}
     <h1>home</h1>
     <form method="post">
-        <input type="text" name="username">
-        <input type="text" name="userage">
-        <button type="submit">Submit</button>
+        <input type="text" name="task">
+        <button type="submit">Add</button>
     </form>
-    <h1>Hello {{ name }}</h1>
 
-    <h1>perfer language {{language}}</h1>
-    {% if age %}
-        {% if age > 16 %}
-            <h1>age = {{age}} You are accpeted</h1>
-        {%else%}
-            <h1>age = {{age}} You are not accpeted</h1>
-        {%endif%}
-    {% else %}
-        <h1> age what </h1>
-    {% endif %}
+    {% for task in tasks %}
+        <h2>{{loop.index}}. {{task}}</h2>
+        <a href="{{ url_for('delete',num = loop.index0) }}">Delete</a>
+    {% endfor %}
 
 {% endblock %}

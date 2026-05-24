@@ -1,30 +1,25 @@
-from flask import Flask , render_template, request , url_for
+from flask import Flask , render_template, request , url_for , redirect 
 
 app = Flask(__name__)
 
-projectslist = ["Portfolio", "Todo App", "Blog"] 
+tasks = []
 
 @app.route("/" , methods=["GET","POST"])
 def home():
     if request.method == "GET":
-        username = "Guest"
-        userage = None
-    elif request.method == "POST":    
-        username = request.form.get("username")
-        userage = int(request.form.get("userage"))
-    return render_template("home.html" , name = username ,age=userage ,language= "pyhton")
+        task = 'Empty'
+    elif request.method == "POST":
+        task = request.form.get('task')
+        if task.strip():
+            tasks.append(task.strip())
+    return render_template ('home.html',tasks=tasks)
 
-@app.route("/about")
-def about():
-    return render_template ("about.html")
+@app.route("/delete/<int:num>")
+def delete(num):
+    if num < len(tasks):
+        tasks.pop(num)
+    return redirect(url_for('home'))
 
-@app.route("/projects")
-def projects ():
-    return render_template("projects.html", projects = projectslist)
-
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
 
 if __name__ == "__main__":    
     app.run(debug=True)
