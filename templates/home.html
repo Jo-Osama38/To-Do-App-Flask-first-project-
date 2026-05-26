@@ -7,8 +7,16 @@
     </form>
 
     {% for task in tasks %}
-        <h2>{{loop.index}}. {{task}}</h2>
-        <a href="{{ url_for('delete',num = loop.index0) }}">Delete</a>
+        
+        {% if task[2] == 0 %}
+            <h2 >{{loop.index}}. {{task[1]}}</h2>
+            <a href="{{ url_for('delete',num = task[0]) }}">Delete</a>
+            <a href="{{ url_for('complete' , num = task[0]) }}">Complete</a>
+        {% else %}
+            <h2 style="text-decoration:line-through;">{{loop.index}}. {{task[1]}}</h2>
+            <a href="{{ url_for('delete',num = task[0]) }}">Delete</a>
+            <a href="{{ url_for('uncomplete' , num = task[0]) }}">UnComplete</a>
+        {% endif %}
     {% endfor %}
 
 {% endblock %}
