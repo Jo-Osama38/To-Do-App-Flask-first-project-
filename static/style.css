@@ -19,8 +19,8 @@ html{
 }
 input{
     padding-left: 10px;
-    background-color: #04499ec1;
-    color: rgb(255, 255, 255);
+    background-color: #72b1ffc1;
+    color: rgb(0, 0, 0);
     font-size: 25px;
     display: inline-block;
     border-radius: 7px;
@@ -29,10 +29,6 @@ input{
     position: absolute;
     top: 11em;
     left: 15em;
-
-}
-input:focus{
-    background-color: #002552c1;
 
 }
 
