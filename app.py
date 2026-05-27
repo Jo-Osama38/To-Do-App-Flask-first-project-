@@ -66,6 +66,24 @@ def uncomplete(num):
     conn.close()
     return redirect(url_for('home'))
 
+@app.route("/edit/<int:num>", methods=["GET","POST"])
+def edit(num):
+    if request.method == "GET":
+        conn = db_connection()
+        cursor = conn.cursor()
+        cursor.execute('SELECT task FROM tasks WHERE id =(?)',(num,))
+        task = cursor.fetchone()
+        conn.commit()
+        conn.close()
+        return render_template('edit.html' ,task = task)
+    elif request.method == "POST":
+        editTask = request.form.get('editTask')
+        conn = db_connection()
+        cursor = conn.cursor()
+        cursor.execute('UPDATE tasks SET task = ?  WHERE id =(?)',(editTask , num,))
+        conn.commit()
+        conn.close()
+        return redirect(url_for('home'))
 
 db_init()
 if __name__ == "__main__":    

@@ -3,9 +3,10 @@
     padding: 0;
 }
 
-body{
+html{
     background:linear-gradient(to right,rgb(3, 212, 149),rgb(26, 144, 248));
 }
+
 .enter{
     background-color: white;
     width: 60%;
@@ -60,7 +61,7 @@ h1{
     font-size: 50px ;
     position: absolute;
     top: 3em ;
-    left: 10em;
+    left: 11.5em;
 }
 
 
@@ -74,6 +75,14 @@ a{
     display: inline-block;
     box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.3);
     
+}
+.edit{
+    background:linear-gradient(to right,rgb(3, 212, 149),rgb(26, 144, 248));
+    color: blue;
+    transition: 0.3s ease;
+}
+.edit:hover{
+    transform: scale(1.1);
 }
 .delete{
     background:linear-gradient(to left,rgb(3, 212, 149),rgb(26, 144, 248));
@@ -94,6 +103,8 @@ a{
 
 h2{
     display: inline-block;
+    word-wrap: break-word;
+    max-width: 70% ;
 }
 .links{
     position: absolute;
