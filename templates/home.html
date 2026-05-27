@@ -1,22 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>home</h1>
-    <form method="post">
-        <input type="text" name="task">
-        <button type="submit">Add</button>
-    </form>
+    <div class="enter"></div>
+        <h1>To Do App Flask 📋</h1>
+        <form method="post">
+            <input type="text" name="task">
+            <button type="submit">Add</button>
+        </form>
+    </div>
 
     {% for task in tasks %}
-        
+       <div class="task">
         {% if task[2] == 0 %}
             <h2 >{{loop.index}}. {{task[1]}}</h2>
-            <a href="{{ url_for('delete',num = task[0]) }}">Delete</a>
-            <a href="{{ url_for('complete' , num = task[0]) }}">Complete</a>
+            <div class="links">
+                <a href="{{ url_for('delete',num = task[0]) }}" class="delete">Delete</a>
+                <a href="{{ url_for('complete' , num = task[0]) }}" class="complete">Complete ⎷</a>
+            </div>
         {% else %}
-            <h2 style="text-decoration:line-through;">{{loop.index}}. {{task[1]}}</h2>
-            <a href="{{ url_for('delete',num = task[0]) }}">Delete</a>
-            <a href="{{ url_for('uncomplete' , num = task[0]) }}">UnComplete</a>
+            <h2 style="text-decoration:line-through;">{{loop.index}}. {{task[1]}} ✅</h2>
+            <div class="links">
+                <a href="{{ url_for('delete',num = task[0]) }}" class="delete">Delete</a>
+                <a href="{{ url_for('uncomplete' , num = task[0]) }}" class="complete">UnComplete</a>
+            </div>
         {% endif %}
+       </div> 
     {% endfor %}
 
 {% endblock %}

@@ -1,14 +1,114 @@
-h1{
-    color: rgb(17, 218, 17);
-    font-size: 50px ;
-    margin: 30px;
+*{
+    margin: 0;
+    padding: 0;
 }
+
+body{
+    background:linear-gradient(to right,rgb(3, 212, 149),rgb(26, 144, 248));
+}
+.enter{
+    background-color: white;
+    width: 60%;
+    height: 20em;
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    margin:6% 20%;
+
+
+}
+input{
+    padding-left: 10px;
+    background-color: #04499ec1;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    display: inline-block;
+    border-radius: 7px;
+    width: 38%;
+    height:40px ;
+    position: absolute;
+    top: 11em;
+    left: 15em;
+
+}
+input:focus{
+    background-color: #002552c1;
+
+}
+
+button{
+    background-color: #033778c1;
+    color: aliceblue;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 7px;
+    font-size: 25px;
+    width: 5em;
+    height: 44px;
+    position: absolute;
+    top: 11em;
+    left:38em;
+    transition: 0.3s ease;
+
+}
+button:hover{
+    background-color: #022755c1;
+    transform: scale(1.1);
+}
+
+h1{
+    color :black;
+    font-size: 50px ;
+    position: absolute;
+    top: 3em ;
+    left: 10em;
+}
+
+
 
 a{
     margin: 10px;
     text-decoration: none;
-    background-color: black;
     color: aqua;
     border-radius: 7px;
     padding: 12px;
+    display: inline-block;
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.3);
+    
+}
+.delete{
+    background:linear-gradient(to left,rgb(3, 212, 149),rgb(26, 144, 248));
+    color: red;
+    transition: 0.3s ease;
+}
+.delete:hover{
+    transform: scale(1.1);
+}
+.complete{
+    background:linear-gradient(to right,rgb(3, 212, 149),rgb(26, 144, 248));
+    color: blue;
+    transition: 0.3s ease;
+}
+.complete:hover{
+    transform: scale(1.1);
+}
+
+h2{
+    display: inline-block;
+}
+.links{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.task{
+    background:white;
+    width: 60%;
+    height: auto;
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 13px;
+    margin:3% 20%;
+    padding-left: 2em;
+    padding: 1em;
+    position: relative;
 }
