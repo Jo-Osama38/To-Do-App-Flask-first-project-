@@ -47,6 +47,31 @@ https://youssefosamasalah.pythonanywhere.com/
 
 ### 1. 
 
-(images/homepage.png)[Home Page]!
+![](images/homepage.png)
+
+
+### 2. 
+
+![](images/Tasks.png)
+
+
+### 3. 
+
+![](images/complete.png)
+
+
+### 4. 
+
+![](images/editmode.png)
+
+### 5. 
+
+![](images/editmode2.png)
+
+
+### 6. 
+
+![](images/saveedit.png)
+
 
 
