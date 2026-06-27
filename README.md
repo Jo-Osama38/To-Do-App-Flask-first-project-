@@ -45,31 +45,31 @@ https://youssefosamasalah.pythonanywhere.com/
 
 # Images
 
-### 1. 
+#### 1. This is what the project looks like when opend and agter adding some tasks
 
 ![](images/homepage.png)
 
 
-### 2. 
+#### 2. The layout of all tasks
 
 ![](images/Tasks.png)
 
 
-### 3. 
+#### 3. When you press the 'Complete' button The completed task appears like this
 
 ![](images/complete.png)
 
 
-### 4. 
+#### 4. Clicking the edit button opens this page
 
 ![](images/editmode.png)
 
-### 5. 
+#### 5. You can edit the task here and save it 
 
 ![](images/editmode2.png)
 
 
-### 6. 
+#### 6. When you click 'Delete' it disappears of course
 
 ![](images/saveedit.png)
 
